@@ -16,7 +16,7 @@ class Solution
             if (head == NULL) return NULL;
             if (head->next == NULL)
             {
-                delete head;
+                // delete head;
                 return NULL;
             }
             ListNode *fast = head->next->next;
