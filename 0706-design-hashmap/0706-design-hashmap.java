@@ -10,15 +10,15 @@ class MyHashMap {
         int bucket = key % size;
         if (map[bucket] == null) {
             map[bucket] = new LinkedList<>();
-            map[bucket].add(new Entry(key, value)); // Add the entry to the linked list in the bucket
+            map[bucket].add(new Entry(key, value));
         } else {
             for (Entry entry : map[bucket]) {
                 if (entry.key == key) {
-                    entry.value = value; // Update the value if the key already exists in the bucket
-                    return; // Exit the method after updating the value
+                    entry.value = value; 
+                    return;
                 }
             }
-            map[bucket].add(new Entry(key, value)); // Add a new entry if the key does not exist in the bucket
+            map[bucket].add(new Entry(key, value)); 
         }
     }
 
@@ -29,20 +29,20 @@ class MyHashMap {
             return -1;
         for (Entry entry : entries) {
             if (entry.key == key)
-                return entry.value; // Return the value associated with the key if found
+                return entry.value; 
         }
-        return -1; // Key not found
+        return -1; 
     }
 
     public void remove(int key) {
         int bucket = key % size;
         LinkedList<Entry> entries = map[bucket];
         if (entries == null)
-            return; // No entries in the bucket, nothing to remove
+            return; 
         for (Entry entry : entries) {
             if (entry.key == key) {
-                entries.remove(entry); // Remove the entry if the key is found in the bucket
-                return; // Exit the method after removing the entry
+                entries.remove(entry); 
+                return; 
             }
         }
     }
