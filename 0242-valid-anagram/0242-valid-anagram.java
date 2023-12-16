@@ -11,9 +11,13 @@ class Solution {
             int b = t.charAt(index) - 'a';
             anagram[i] += 1;
             anagram[b] -= 1;
+
+            if (anagram[i] < 0 || anagram[b] < 0) {
+                return false;
+            }
         }
         for (int i = 0; i < 26; i++) {
-            if (anagram[i] >= 1) {
+            if (anagram[i] != 0) {
                 return false;
             }
         }
